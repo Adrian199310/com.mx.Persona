@@ -20,7 +20,8 @@ namespace Com.mx.Persona.Api.Controllers
         }
 
         // GET: api/<PersonaController>
-        [HttpGet]
+        //[HttpGet("GetPersona")]
+        [HttpGet("")]
         public ActionResult<ObtenerPersonaResponse> Get()
         {
             var response = new ObtenerPersonaResponse();
@@ -57,6 +58,7 @@ namespace Com.mx.Persona.Api.Controllers
         }
 
         // GET api/<PersonaController>/5
+        //[HttpGet("GetPersona/{id}")]
         [HttpGet("{id}")]
         public ActionResult<ObtenerPersonaResponse> Get(int id)
         {
@@ -156,8 +158,8 @@ namespace Com.mx.Persona.Api.Controllers
         }
 
         // PUT api/<PersonaController>/5
-        [HttpPut("{id}")]
-        public ActionResult<UpdatePersonaResponse> Put(int id, [FromBody] updatePersonaRequest value)
+        [HttpPut]
+        public ActionResult<UpdatePersonaResponse> Put([FromBody] updatePersonaRequest value)
         {
             var response = new UpdatePersonaResponse();
             try
